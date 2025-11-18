@@ -8,7 +8,7 @@ Goals
 - Develop a structured learning path to confidently tackle more advanced topics in Python and beyond.
 
 
-1. Core Python Fundamentals
+--------------------- 1. Core Python Fundamentals --------------------- 
 
 - Variables & Data Types
   Practice: numbers, strings, booleans
@@ -32,7 +32,7 @@ Goals
 
 Goal: Solve any beginner Python problem with confidence.
 
-2. Functions & Object-Oriented Programming (OOP)
+----------- 2. Functions & Object-Oriented Programming (OOP) -------------
 
 - Functions
   Practice: recursion, lambda, map/filter/reduce
@@ -48,7 +48,7 @@ Goal: Solve any beginner Python problem with confidence.
 
 Goal: Write structured, modular code and understand OOP patterns.
 
-3. Mini Projects Portfolio
+---------------------  3. Mini Projects Portfolio --------------------- 
 
 Project 1: Automation
 - Folder: projects/automation_scripts/
@@ -71,6 +71,7 @@ Project 3: Mini AI/ML Preparation
   - Predict something simple using numpy (linear regression from scratch)
   - Implement K-means clustering on small datasets
 
+--------------------- --------------------- --------------------- ---------------
 
 How to Use This Repo
 
