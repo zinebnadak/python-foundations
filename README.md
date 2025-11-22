@@ -10,7 +10,7 @@ Goals
 
 --------------------- 1. Core Python Fundamentals --------------------- 
 
-- Variables & Data Types
+- ✅ Variables & Data Types (22.11.2025)
   Practice: numbers, strings, booleans
   Exercise: mini calculator (add, subtract, multiply, divide) with error handling and type hints.
 
