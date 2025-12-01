@@ -73,41 +73,59 @@ str_num = str(num_int)       # int → str
 
 ######################## Mini Calculator ########################
 
-def mini_calculator (a:float, b:float, op: str) -> float | str:             #parameters (inputs) the function accepts. The : after each parameter is called a type hint, it doesn’t enforce the type but helps readability and tools. | means “or”. It tells Python (and humans reading your code) that the function will return either a float OR a string. This is the return type hint.
+# 1. definition (Type hints are present in the function signature: expression: str (input is a string) and -> float | str (output is either a float or a string) Type hints improve clarity, readability, and tooling support, making your code easier to understand and debug)
+# 2. try + except (error handling)
+# 3. user input
+# 4. call function
+# 5. print result
+
+
+def mini_calculator(expression: str) -> float | str:    # "expression: str" user input expects a string, "-> float | str" : The function will return either a floating-point number or a string
     """
-        Simple calculator
-        a, b: numbers
-        op: '+', '-', '*', '/'
+    Simple calculator that evaluates a mathematical expression from a string input.
+    The expression should be in the form of 'operand operator operand' (e.g., '5 + 3').
     """
 
-    try:
-        if op == "+":
-            return a+b
-        elif op == "-":
-            return a-b
-        elif op == "*":
-            return a*b
-        elif op == "/":
-            return a/b
+    try:        #The code inside the try block is doing multiple things that could potentially raise errors
+        # Split the expression into parts
+        parts = expression.split()
+
+        # Check if the expression has exactly 3 parts: operand1, operator, operand2
+        if len(parts) != 3:
+            return "Invalid format. Please enter the expression as 'operand operator operand'."
+
+        # Parse the operands and operator
+        operand1 = float(parts[0])
+        operator = parts[1]         #string
+        operand2 = float(parts[2])
+
+        # Perform calculation based on the operator
+        if operator == "+":
+            return operand1 + operand2
+        elif operator == "-":
+            return operand1 - operand2
+        elif operator == "*":
+            return operand1 * operand2
+        elif operator == "/":
+            if operand2 == 0:
+                return "Cannot divide by zero"
+            return operand1 / operand2
         else:
-            return "Invalid operator"
-    except ZeroDivisionError:       #ZeroDivisionError happens when you try to divide a number by zero
-        return "Cannot divide by zero"
+            return "Invalid operator. Use +, -, *, or /."
 
-#Test
-print (mini_calculator(5,2, "+"))
-print (mini_calculator(5,0,"/"))
-
-#Ask User
-# Get user input
-num1 = float(input("Enter the first number: "))
-num2 = float(input("Enter the second number: "))
-operator = input("Enter an operator (+, -, *, /): ")
+    except ValueError:#You're expecting that the user might enter invalid input that cannot be converted to a number
+        return "Invalid numbers. Please enter valid numerical values."
 
 
+# Ask User for an expression
+expression = input("Enter a mathematical expression (e.g., '5 + 3'): ")
 
+# Evaluate the expression
+result = mini_calculator(expression)
 
-#UPGRADE and fix ask user: like a real calculator, where the user types a full expression (e.g., 5/6 or 12+3) and the program evaluates it.
+# Display the result
+print(result)
+
 
 
 
